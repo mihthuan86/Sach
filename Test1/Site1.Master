@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Test1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Test</title>
+    <link href="Css1.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div class="left">
+                <h3>Danh muc loai sách<asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("MaLoai") %>' Text='<%# Eval("TenLoai") %>' OnClick="LinkButton_Click"></asp:LinkButton>
+                    </ItemTemplate>
+                    </asp:DataList>
+                </h3>
+            </div>
+            <div class="right">
+
+                <asp:Login ID="Login1" runat="server">
+                </asp:Login>
+
+            </div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
+    </form>
+</body>
+</html>
+
